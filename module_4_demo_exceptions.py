@@ -45,9 +45,10 @@ finally:
     # Close the file in the finally block
     if file is not None:
         file.close()
-        print("File closed.")
+        print("File closed.")=
 """
 
+"""
 
 numeric_list = [1, 2, 3, 'four', 5, 6, 7, 'eight',9 ,10, 11, 'twelve']
 valid_list = []
@@ -60,4 +61,33 @@ for number in numeric_list:
         pass
 
 # continue with program using valid_list        
+"""
 
+import logging
+
+logging.debug('Debug level message.')
+logging.info('Info level message')
+logging.warning('Warning level message')
+logging.error('Error level message')
+logging.critical('Critical level message')
+            
+logging.basicConfig(level=logging.DEBUG,
+                    filename='app.log', 
+                    filemode='w', 
+                    format='%(asctime)s - %(levelname)s - %(message)s')
+
+logging.debug('This will get logged to a file')            
+
+numerator = 5
+denominator = 0
+
+logger= logging.getLogger()
+
+try:
+    quotient = numerator / denominator
+except Exception:
+    logging.exception("An exception has occurred: ")
+    logger.error("An error has occurred again.")
+    
+    
+    
